@@ -72,3 +72,14 @@ Complex usage:
 
   --version        Display version information.
 ```
+
+## Common Errors
+
+##### Missing Prerequisite
+You might see the message:
+```
+System.ComponentModel.Win32Exception (2): No such file or directory
+   at System.Diagnostics.Process.StartCore(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start()
+```
+Ensure ffmpeg, ffprobe, and mp4box are in your path or are specified in the option flags. Especially check mp4box as on some platforms it's actually MP4Box.
