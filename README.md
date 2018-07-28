@@ -17,11 +17,19 @@ A tutorial for installing dotnet using package management [can be found here](ht
 ## Installation
 Since this application is so small it's recommended you build it from source. The following commands should get you off the ground.
 
+Windows
 ```
 git clone https://github.com/bloomtom/dencli.git
 cd DEncli
 dotnet build --configuration Release
 dotnet .\DEncli\bin\Release\netcoreapp2.0\dencli.dll --help
+```
+Linux
+```
+git clone https://github.com/bloomtom/dencli.git
+cd dencli
+dotnet build --configuration Release
+dotnet DEncli/bin/Release/netcoreapp2.0/dencli.dll --help
 ```
 
 ## Command Options
