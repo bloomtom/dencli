@@ -43,34 +43,39 @@ Simple usage:
 Complex usage:
 >  dotnet dencli.dll --delete truncate --input video.mkv --preset ultrafast
 
-  -i, --input      Required. Input file to be encoded.
+  -i, --input        Required. Input file to be encoded.
 
-  -o, --output     The directory to write output files at. Defaults to the input file directory.
+  -o, --output       The directory to write output files at. Defaults to the input file directory.
 
-  --outfile        The base filename to use for the output files. Defaults to input filename.
+  --outfile          The base filename to use for the output files. Defaults to input filename.
 
-  -d, --delete     (Default: none) Specify what should be done to the source on successful encode. Allows truncate or
-                   delete.
+  -d, --delete       (Default: none) Specify what should be done to the source on successful encode. Allows truncate or
+                     delete.
 
-  -p, --preset     (Default: medium) Specify the ffmpeg preset.
+  -p, --preset       (Default: medium) Specify the ffmpeg preset.
 
-  -q, --quality    (Default: medium) Specify the quality band to use. Allows potato, low, medium, high, ultra.
+  -q, --quality      (Default: medium) Specify the quality band to use. Allows potato, low, medium, high, ultra.
 
-  --framerate      (Default: 24) Specify the framerate to use.
+  --enablecopying    (Default: false) Enable stream copying. Leave this false unless you're sure the input file is
+                     dash-ready.
 
-  --keyinterval    (Default: 96) Specify the keyframe interval to use.
+  --disablecrush     (Default: false) Disables quality crushing. May lead to output files larger than the input.
 
-  --ffmpeg         (Default: ffmpeg) The path to ffmpeg.
+  --framerate        (Default: 24) Specify the framerate to use.
 
-  --ffprobe        (Default: ffprobe) The path to ffprobe.
+  --keyinterval      (Default: 96) Specify the keyframe interval to use.
 
-  --mp4box         (Default: mp4box) The path to mp4box.
+  --ffmpeg           (Default: ffmpeg) The path to ffmpeg.
 
-  --temp           Specify the temp directory. Defaults to current directory.
+  --ffprobe          (Default: ffprobe) The path to ffprobe.
 
-  --help           Display this help screen.
+  --mp4box           (Default: mp4box) The path to mp4box.
 
-  --version        Display version information.
+  --temp             Specify the temp directory. Defaults to current directory.
+
+  --help             Display this help screen.
+
+  --version          Display version information.
 ```
 
 ## Common Errors

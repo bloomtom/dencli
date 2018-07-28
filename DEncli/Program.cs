@@ -56,7 +56,11 @@ namespace dencli
             var outputCallback = new Action<string>((x) => { Console.WriteLine(x); });
             var errorCallback = new Action<string>((x) => { Console.Error.WriteLine(x); });
 
-            var encoder = new Encoder(options.FFmpegPath, options.FFprobePath, options.BoxPath, outputCallback, errorCallback, workingDirectory);
+            var encoder = new Encoder(options.FFmpegPath, options.FFprobePath, options.BoxPath, outputCallback, errorCallback, workingDirectory)
+            {
+                DisableQualityCrushing = options.DisableCrushing,
+                EnableStreamCopying = options.EnableStreamCopying
+            };
             var qualities = Quality.GenerateDefaultQualities(options.Quality, options.Preset);
 
             var result = encoder.GenerateDash(options.InputFile, outputName, options.Framerate, options.KeyInterval, qualities, outputPath);
