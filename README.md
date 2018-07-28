@@ -14,6 +14,16 @@ You can get executables for your platform here:
 You'll also need dotnet. This is installed by default on Windows, but on Linux or OSX you may need to install it.
 A tutorial for installing dotnet using package management [can be found here](https://www.microsoft.com/net/learn/get-started-with-dotnet-tutorial). If you just want the binaries you can [find those here](https://www.microsoft.com/net/download/dotnet-core/2.1).
 
+## Installation
+Since this application is so small it's recommended you build it from source. The following commands should get you off the ground.
+
+```
+git clone https://github.com/bloomtom/dencli.git
+cd DEncli
+dotnet build --configuration Release
+dotnet .\DEncli\bin\Release\netcoreapp2.0\dencli.dll --help
+```
+
 ## Command Options
 ##### The following is an output of the --help option.
 ```
