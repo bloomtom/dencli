@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Description>A CLI interface to the DEnc MPEG DASH encoder library.</Description>
+    <Version>0.1.2</Version>
+    <Copyright>MIT License - Copyright 2018 bloomtom</Copyright>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <Authors>bloomtom</Authors>
+    <Product>DEnCLI</Product>
+    <AssemblyName>dencli</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bloomtom.DEnc" Version="0.1.5" />
+    <PackageReference Include="CommandLineParser" Version="2.2.1" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dencli": {
+      "commandName": "Project",
+      "commandLineArgs": "-i \"C:\\Users\\bloomt\\Downloads\\dashtest\\trailer_1080p.ogg\" -p medium -q medium"
+    }
+  }
+}
