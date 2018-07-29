@@ -1,4 +1,4 @@
-# DEnc
+# dencli
 >A reference front-end for the [DEnc](https://github.com/bloomtom/DEnc) library.
 
 This application is a CLI front-end for the DEnc DASH encoder library. Multi-transcode your media files into the [MPEG DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) format with a single command!
@@ -20,9 +20,9 @@ Since this application is so small it's recommended you build it from source. Th
 Windows
 ```
 git clone https://github.com/bloomtom/dencli.git
-cd DEncli
+cd dencli
 dotnet build --configuration Release
-dotnet .\DEncli\bin\Release\netcoreapp2.0\dencli.dll --help
+dotnet DEncli\bin\Release\netcoreapp2.0\dencli.dll --help
 ```
 Linux
 ```
@@ -33,7 +33,7 @@ dotnet DEncli/bin/Release/netcoreapp2.0/dencli.dll --help
 ```
 
 ## Command Options
-##### The following is an output of the --help option.
+The following is an output of the --help option.
 ```
 DEncli 0.1.2
 MIT License - Copyright 2018 bloomtom
@@ -69,7 +69,7 @@ Complex usage:
 
   --ffprobe          (Default: ffprobe) The path to ffprobe.
 
-  --mp4box           (Default: mp4box) The path to mp4box.
+  --mp4box           (Default: MP4Box) The path to mp4box.
 
   --temp             Specify the temp directory. Defaults to current directory.
 
@@ -80,11 +80,11 @@ Complex usage:
 
 ## Common Errors
 
-##### Missing Prerequisite
+##### Missing Requirements
 You might see the message:
 ```
 System.ComponentModel.Win32Exception (2): No such file or directory
    at System.Diagnostics.Process.StartCore(ProcessStartInfo startInfo)
    at System.Diagnostics.Process.Start()
 ```
-Ensure ffmpeg, ffprobe, and mp4box are in your path or are specified in the option flags. Especially check mp4box as on some platforms it's actually MP4Box.
+Ensure ffmpeg, ffprobe, and mp4box are in your path or are specified in the option flags.
