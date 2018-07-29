@@ -62,7 +62,7 @@ namespace dencli
         [Option("ffprobe", Default = "ffprobe", HelpText = "The path to ffprobe.")]
         public string FFprobePath { get; set; }
 
-        [Option("mp4box", Default = "mp4box", HelpText = "The path to mp4box.")]
+        [Option("mp4box", Default = "MP4Box", HelpText = "The path to MP4Box.")]
         public string BoxPath { get; set; }
 
         [Option("temp", Default = null, HelpText = "Specify the temp directory. Defaults to current directory.")]
