@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <Description>A CLI interface to the DEnc MPEG DASH encoder library.</Description>
-    <Version>0.1.3</Version>
+    <Version>0.1.4</Version>
     <Copyright>MIT License - Copyright 2018 bloomtom</Copyright>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <Authors>bloomtom</Authors>
@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="bloomtom.DEnc" Version="0.2.1" />
+    <PackageReference Include="bloomtom.DEnc" Version="0.2.2" />
     <PackageReference Include="CommandLineParser" Version="2.2.1" />
   </ItemGroup>
 
