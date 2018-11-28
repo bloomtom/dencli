@@ -13,8 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="bloomtom.DEnc" Version="0.2.2" />
-    <PackageReference Include="CommandLineParser" Version="2.2.1" />
+    <PackageReference Include="bloomtom.DEnc" Version="0.2.7" />
+    <PackageReference Include="CommandLineParser" Version="2.3.0" />
   </ItemGroup>
 
 </Project>

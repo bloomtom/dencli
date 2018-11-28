@@ -44,7 +44,7 @@ namespace dencli
         private static void RunWithOptions(Options options)
         {
             string workingDirectory = options.TempDir ?? Environment.CurrentDirectory;
-            string outputPath = options.OutputPath ?? Path.GetDirectoryName(options.InputFile);
+            string outputPath = options.OutputPath ?? Path.GetDirectoryName(Path.GetFullPath(options.InputFile));
             string outputName = options.OutputFilename ?? Path.GetFileNameWithoutExtension(options.InputFile);
 
             if (!File.Exists(options.InputFile))
@@ -63,7 +63,7 @@ namespace dencli
             };
             var qualities = Quality.GenerateDefaultQualities(options.Quality, options.Preset);
 
-            var result = encoder.GenerateDash(options.InputFile, outputName, options.Framerate, options.KeyInterval, qualities, outputPath);
+            var result = encoder.GenerateDash(options.InputFile, outputName, options.Framerate, options.KeyInterval, qualities, outDirectory: outputPath);
 
             if (result != null)
             {
