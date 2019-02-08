@@ -9,8 +9,14 @@ namespace dencli
 {
     class Program
     {
+        private static readonly System.Threading.CancellationTokenSource cancelToken = new System.Threading.CancellationTokenSource();
+        private static bool running = false;
+
         static void Main(string[] args)
         {
+            AppDomain.CurrentDomain.DomainUnload += (s, e) => ExitCleanup();
+            Console.CancelKeyPress += (s, e) => ExitCleanup();
+
             try
             {
                 Parser.Default.ParseArguments<Options>(args)
@@ -21,6 +27,17 @@ namespace dencli
             {
                 Console.Error.WriteLine(ex.ToString());
                 Environment.Exit(4);
+            }
+        }
+
+        private static void ExitCleanup()
+        {
+            cancelToken.Cancel();
+            var sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+            while(running && sw.ElapsedMilliseconds < 5000)
+            {
+                System.Threading.Thread.Sleep(100);
             }
         }
 
@@ -63,7 +80,16 @@ namespace dencli
             };
             var qualities = Quality.GenerateDefaultQualities(options.Quality, options.Preset);
 
-            var result = encoder.GenerateDash(options.InputFile, outputName, options.Framerate, options.KeyInterval, qualities, outDirectory: outputPath);
+            DashEncodeResult result = null;
+            try
+            {
+                running = true;
+                result = encoder.GenerateDash(options.InputFile, outputName, options.Framerate, options.KeyInterval, qualities, outDirectory: outputPath, cancel: cancelToken.Token);
+            }
+            finally
+            {
+                running = false;
+            }
 
             if (result != null)
             {
