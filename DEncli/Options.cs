@@ -44,7 +44,7 @@ namespace dencli
         [Option('q', "quality", Default = DefaultQuality.medium, HelpText = "Specify the quality band to use. Allows potato, low, medium, high, ultra.")]
         public DefaultQuality Quality { get; set; }
 
-        [Option("enablecopying", Default = false, HelpText = "Enable stream copying. Leave this false unless you're sure the input file is dash-ready.")]
+        [Option("enablecopying", Default = false, HelpText = "Enable stream copying. This is an experimental feature, but may speed up the encode dramatically.")]
         public bool EnableStreamCopying { get; set; }
 
         [Option("disablecrush", Default = false, HelpText = "Disables quality crushing. May lead to output files larger than the input.")]
