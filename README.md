@@ -35,47 +35,45 @@ dotnet DEncli/bin/Release/netcoreapp2.0/dencli.dll --help
 ## Command Options
 The following is an output of the --help option.
 ```
-DEncli 0.1.2
-MIT License - Copyright 2018 bloomtom
+dencli 0.3.0
+MIT License - Copyright 2019 bloomtom
 USAGE:
 Simple usage:
->  dotnet dencli.dll --input video.mkv
+  >  dotnet dencli.dll --input video.mkv
 Complex usage:
->  dotnet dencli.dll --delete truncate --input video.mkv --preset ultrafast
+  >  dotnet dencli.dll --delete truncate --input video.mkv --preset ultrafast
 
-  -i, --input        Required. Input file to be encoded.
+  -i, --input         Required. Input file to be encoded.
 
-  -o, --output       The directory to write output files at. Defaults to the input file directory.
+  -o, --output        The directory to write output files at. Defaults to the input file directory.
 
-  --outfile          The base filename to use for the output files. Defaults to input filename.
+  --outfile           The base filename to use for the output files. Defaults to input filename.
 
-  -d, --delete       (Default: none) Specify what should be done to the source on successful encode. Allows truncate or
-                     delete.
+  -d, --delete        (Default: none) Specify what should be done to the source on successful encode. Allows truncate or delete.
 
-  -p, --preset       (Default: medium) Specify the ffmpeg preset.
+  -p, --preset        (Default: medium) Specify the ffmpeg preset.
 
-  -q, --quality      (Default: medium) Specify the quality band to use. Allows potato, low, medium, high, ultra.
+  -q, --quality       (Default: medium) Specify the quality band to use. Allows potato, low, medium, high, ultra.
 
-  --enablecopying    (Default: false) Enable stream copying. Leave this false unless you're sure the input file is
-                     dash-ready.
+  --disablecopying    (Default: false) Disables automatic detection of copyable input streams.
 
-  --disablecrush     (Default: false) Disables quality crushing. May lead to output files larger than the input.
+  --disablecrush      (Default: false) Disables quality crushing. May lead to output files larger than the input.
 
-  --framerate        (Default: 24) Specify the framerate to use.
+  --framerate         (Default: 24) Specify the framerate to use.
 
-  --keyinterval      (Default: 96) Specify the keyframe interval to use.
+  --keyinterval       (Default: 96) Specify the keyframe interval to use.
 
-  --ffmpeg           (Default: ffmpeg) The path to ffmpeg.
+  --ffmpeg            (Default: ffmpeg) The path to ffmpeg.
 
-  --ffprobe          (Default: ffprobe) The path to ffprobe.
+  --ffprobe           (Default: ffprobe) The path to ffprobe.
 
-  --mp4box           (Default: MP4Box) The path to mp4box.
+  --mp4box            (Default: MP4Box) The path to MP4Box.
 
-  --temp             Specify the temp directory. Defaults to current directory.
+  --temp              Specify the temp directory. Defaults to current directory.
 
-  --help             Display this help screen.
+  --help              Display this help screen.
 
-  --version          Display version information.
+  --version           Display version information.
 ```
 
 ## Common Errors

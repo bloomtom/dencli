@@ -1,8 +1,7 @@
 {
   "profiles": {
     "dencli": {
-      "commandName": "Project",
-      "commandLineArgs": "-i test5.mkv -q potato"
+      "commandName": "Project"
     }
   }
 }

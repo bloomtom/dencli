@@ -76,15 +76,25 @@ namespace dencli
             var encoder = new Encoder(options.FFmpegPath, options.FFprobePath, options.BoxPath, outputCallback, errorCallback, workingDirectory)
             {
                 DisableQualityCrushing = options.DisableCrushing,
-                EnableStreamCopying = options.EnableStreamCopying
+                EnableStreamCopying = !options.DisableStreamCopying
             };
             var qualities = Quality.GenerateDefaultQualities(options.Quality, options.Preset);
+
+            var progress = new Progress<IEnumerable<EncodeStageProgress>>(WriteProgress);
 
             DashEncodeResult result = null;
             try
             {
                 running = true;
-                result = encoder.GenerateDash(options.InputFile, outputName, options.Framerate, options.KeyInterval, qualities, outDirectory: outputPath, cancel: cancelToken.Token);
+                result = encoder.GenerateDash(
+                    options.InputFile,
+                    outputName,
+                    options.Framerate,
+                    options.KeyInterval,
+                    qualities,
+                    outDirectory: outputPath,
+                    cancel: cancelToken.Token,
+                    progress: progress);
             }
             finally
             {
@@ -118,6 +128,27 @@ namespace dencli
                     break;
                 default:
                     break;
+            }
+        }
+
+        private static void WriteProgress(IEnumerable<EncodeStageProgress> progress)
+        {
+            EncodeStageProgress p = null;
+            foreach (var item in progress)
+            {
+                switch (item.Name)
+                {
+                    case "Encode":
+                        p = item;
+                        break;
+                    default:
+                        if (item.Progress != 0) { return; }
+                        break;
+                }
+            }
+            if(p != null)
+            {
+                Console.Error.Write("\r" + p.Progress.ToString("P").PadLeft(8) + " ");
             }
         }
     }
