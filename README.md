@@ -15,7 +15,9 @@ You'll also need dotnet. This is installed by default on Windows, but on Linux o
 A tutorial for installing dotnet using package management [can be found here](https://www.microsoft.com/net/learn/get-started-with-dotnet-tutorial). If you just want the binaries you can [find those here](https://www.microsoft.com/net/download/dotnet-core/2.1).
 
 ## Installation
-Since this application is so small it's recommended you build it from source. The following commands should get you off the ground.
+Releases for Windows and Linux are available on this repository.
+
+If you want to build it from source instead, the following commands should get you off the ground.
 
 Windows
 ```
