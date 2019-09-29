@@ -11,33 +11,25 @@ You can get executables for your platform here:
  - [ffmpeg](https://ffmpeg.org/)
  - [mp4box](https://gpac.wp.imt.fr/downloads/)
 
-You'll also need dotnet. This is installed by default on Windows, but on Linux or OSX you may need to install it.
+You'll also need dotnet core if you want to compile from source.
 A tutorial for installing dotnet using package management [can be found here](https://www.microsoft.com/net/learn/get-started-with-dotnet-tutorial). If you just want the binaries you can [find those here](https://www.microsoft.com/net/download/dotnet-core/2.1).
 
 ## Installation
-Releases for Windows and Linux are available on this repository.
+Releases for 64 bit Windows and Linux are available on this repository. They are self-contained, and do not require the dotnet runtime to be installed.
 
-If you want to build it from source instead, the following commands should get you off the ground.
+If you want to build from source instead, the following commands should get you off the ground.
 
-Windows
 ```
 git clone https://github.com/bloomtom/dencli.git
 cd dencli
 dotnet build --configuration Release
-dotnet DEncli\bin\Release\netcoreapp2.0\dencli.dll --help
 ```
-Linux
-```
-git clone https://github.com/bloomtom/dencli.git
-cd dencli
-dotnet build --configuration Release
-dotnet DEncli/bin/Release/netcoreapp2.0/dencli.dll --help
-```
+
 
 ## Command Options
 The following is an output of the --help option.
 ```
-dencli 0.3.0
+dencli 0.3.1
 MIT License - Copyright 2019 bloomtom
 USAGE:
 Simple usage:
